@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, permissions
-from portfolio.quickstart.serializers import UserSerializer, GroupSerializer
+from portfolio.quickstart.serializers import UserSerializer, GroupSerializer, LanguageSerializer, ProjectSerializer, ProjectLanguageSerializer
+from codeprojects.models import Language, Project, ProjectLanguage
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,3 +21,27 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited
+    """
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class LanguageViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited
+    """
+    queryset = Language.objects.all()
+    serializer_class = LanguageSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ProjectLanguageViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited
+    """
+    queryset = ProjectLanguage.objects.all()
+    serializer_class = ProjectLanguageSerializer
+    permission_classes = [permissions.IsAuthenticated]
