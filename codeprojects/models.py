@@ -16,11 +16,21 @@ class Language(models.Model):
 
 class Project(models.Model):
     """ Save project details """
+    PROJECT_TYPE_CHOICES = [
+    ('TUT', 'Tutorial'),
+    ('COU', 'Graded Coursework'),
+    ('IND', 'Individual Project'),
+    ('COM', 'Commission'),
+]
+
     title = models.CharField(max_length=100)
     live_link = models.URLField()
     code_link = models.URLField()
     preview_img = models.URLField()
+    type = models.CharField(max_length=3, choices=PROJECT_TYPE_CHOICES, default="IND")
+    description = models.TextField()
     languages = models.ManyToManyField(Language, through='ProjectLanguage', related_name="projects")
+
 
     def __str__(self):
         return self.title
@@ -30,7 +40,7 @@ class ProjectLanguage(models.Model):
     """ Connect Project model to Language model """
     class Meta:
         """
-        Ensure each email can only be added to each list once.
+        Ensure each project/language pairing can only be added to each list once.
         """
         constraints = [models.UniqueConstraint(fields=["project", "language"], name='unique_pairing')]
 
