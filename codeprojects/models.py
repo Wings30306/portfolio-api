@@ -1,4 +1,5 @@
 from django.db import models
+from education.models import Course
 
 # Create your models here.
 from django.db import models
@@ -28,6 +29,7 @@ class Project(models.Model):
     code_link = models.URLField()
     preview_img = models.URLField()
     type = models.CharField(max_length=3, choices=PROJECT_TYPE_CHOICES, default="IND")
+    course = models.ForeignKey(Course, blank=True, null=True, related_name='projects', on_delete=models.SET_NULL)
     description = models.TextField()
     languages = models.ManyToManyField(Language, through='ProjectLanguage', related_name="projects")
 

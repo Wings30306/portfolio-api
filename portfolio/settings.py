@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     ### Imported libraries (non-Django)
     'rest_framework',
     ### Own apps
-    'codeprojects'
+    'codeprojects',
+    'education'
 ]
 
 MIDDLEWARE = [
