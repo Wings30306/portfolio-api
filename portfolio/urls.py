@@ -9,6 +9,7 @@ router.register(r"groups", views.GroupViewSet)
 router.register(r"projects", views.ProjectViewSet)
 router.register(r"languages", views.LanguageViewSet)
 router.register(r"projectlanguages", views.ProjectLanguageViewSet)
+router.register(r"courses", views.CourseViewSet)
 
 
 

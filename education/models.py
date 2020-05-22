@@ -10,3 +10,6 @@ class Course(models.Model):
     certificate_image = models.URLField(null=True, blank=True)
     date_finished = models.DateField()
     description = models.TextField()
+
+    def __str__(self):
+        return self.name + " - " + self.school
