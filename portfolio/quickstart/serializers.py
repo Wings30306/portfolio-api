@@ -23,7 +23,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Project
-        fields = ["url", "title", "live_link", "code_link", "preview_img", "languages"]
+        fields = ["url", "title", "live_link", "code_link", "preview_img", "type", "course", "description"]
 
         
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
