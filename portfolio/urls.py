@@ -11,6 +11,7 @@ router.register(r"languages", views.LanguageViewSet)
 router.register(r"projectlanguages", views.ProjectLanguageViewSet)
 router.register(r"courses", views.CourseViewSet)
 router.register(r"jobs", views.JobViewSet)
+router.register(r"hobbies", views.HobbyViewSet)
 
 
 # Wire up our API using automatic URL routing

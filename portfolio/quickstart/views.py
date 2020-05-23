@@ -7,11 +7,13 @@ from portfolio.quickstart.serializers import (
     ProjectSerializer,
     ProjectLanguageSerializer,
     CourseSerializer,
-    JobSerializer
+    JobSerializer,
+    HobbySerializer
 )
 from codeprojects.models import Language, Project, ProjectLanguage
 from education.models import Course
 from experience.models import Job
+from hobbies.models import Hobby
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -74,4 +76,13 @@ class JobViewSet(viewsets.ModelViewSet):
     """
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+    permission_classes  = [permissions.IsAuthenticated]
+
+
+class HobbyViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows hobbies to be viewed or edited
+    """
+    queryset = Hobby.objects.all()
+    serializer_class = HobbySerializer
     permission_classes  = [permissions.IsAuthenticated]
