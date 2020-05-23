@@ -80,10 +80,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if os.environ.get("DATABASE"):
+if os.environ.get("DATABASE_URL"):
     DATABASES = {'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL'))}
 else:
+    print("No database url found, using sqlite3")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
