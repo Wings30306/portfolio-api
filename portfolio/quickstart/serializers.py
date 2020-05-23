@@ -4,6 +4,7 @@ from rest_framework import serializers
 # From own apps
 from codeprojects.models import Language, Project, ProjectLanguage
 from education.models import Course
+from experience.models import Job
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -39,4 +40,10 @@ class ProjectLanguageSerializer(serializers.HyperlinkedModelSerializer):
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
-        fields = ["name", "school", "school_url", "certificate", "certificate_image", "date_finished", "description"]
+        fields = ["url", "name", "school", "school_url", "certificate", "certificate_image", "date_finished", "description"]
+
+
+class JobSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Job
+        fields = ["url", "title", "company_name", "company_link", "company_logo", "type", "description", "start_date", "end_date", "code_related"]

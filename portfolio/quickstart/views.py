@@ -6,10 +6,12 @@ from portfolio.quickstart.serializers import (
     LanguageSerializer,
     ProjectSerializer,
     ProjectLanguageSerializer,
-    CourseSerializer
+    CourseSerializer,
+    JobSerializer
 )
 from codeprojects.models import Language, Project, ProjectLanguage
 from education.models import Course
+from experience.models import Job
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -64,3 +66,12 @@ class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class JobViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows jobs to be viewed or edited
+    """
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
+    permission_classes  = [permissions.IsAuthenticated]
