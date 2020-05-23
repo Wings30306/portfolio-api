@@ -21,4 +21,4 @@ class Job(models.Model):
     code_related = models.BooleanField()
 
     def __str__(self):
-        return self.title
+        return self.company_name
