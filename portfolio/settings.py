@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     ### Own apps
     'codeprojects',
-    'education'
+    'education',
+    'experience'
 ]
 
 MIDDLEWARE = [
