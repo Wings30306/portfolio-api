@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     ### Own apps
     'codeprojects',
     'education',
-    'experience'
+    'experience',
+    'hobbies'
 ]
 
 MIDDLEWARE = [
