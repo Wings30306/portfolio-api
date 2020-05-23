@@ -1,3 +1,4 @@
 .dj-r-portfolio
 env
 db.sqlite3
+.vscode/
