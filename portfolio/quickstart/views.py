@@ -22,7 +22,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by("-date_joined")
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class GroupViewSet(viewsets.ModelViewSet):
@@ -31,7 +31,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -40,7 +40,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class LanguageViewSet(viewsets.ModelViewSet):
@@ -49,7 +49,7 @@ class LanguageViewSet(viewsets.ModelViewSet):
     """
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class ProjectLanguageViewSet(viewsets.ModelViewSet):
@@ -58,7 +58,7 @@ class ProjectLanguageViewSet(viewsets.ModelViewSet):
     """
     queryset = ProjectLanguage.objects.all()
     serializer_class = ProjectLanguageSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -67,7 +67,7 @@ class CourseViewSet(viewsets.ModelViewSet):
     """
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class JobViewSet(viewsets.ModelViewSet):
@@ -76,7 +76,7 @@ class JobViewSet(viewsets.ModelViewSet):
     """
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes  = [permissions.IsAuthenticated]
+    permission_classes  = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class HobbyViewSet(viewsets.ModelViewSet):
@@ -85,4 +85,4 @@ class HobbyViewSet(viewsets.ModelViewSet):
     """
     queryset = Hobby.objects.all()
     serializer_class = HobbySerializer
-    permission_classes  = [permissions.IsAuthenticated]
+    permission_classes  = [permissions.IsAuthenticatedOrReadOnly]
