@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     ### Imported libraries (non-Django)
     'rest_framework',
+    'corsheaders'
     ### Own apps
     'codeprojects',
     'education',
@@ -58,6 +59,9 @@ MIDDLEWARE = [
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -151,3 +155,6 @@ REST_FRAMEWORK = {
         'user': '1000/hour'
     }
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = True
