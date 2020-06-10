@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     ### Imported libraries (non-Django)
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
     ### Own apps
     'codeprojects',
     'education',
