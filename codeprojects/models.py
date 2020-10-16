@@ -31,6 +31,7 @@ class Project(models.Model):
     type = models.CharField(max_length=3, choices=PROJECT_TYPE_CHOICES, default="IND")
     course = models.ForeignKey(Course, blank=True, null=True, related_name='projects', on_delete=models.SET_NULL)
     description = models.TextField()
+    description_nl = models.TextField(default="Beschrijving binnenkort beschikbaar!")
     languages = models.ManyToManyField(Language, through='ProjectLanguage', related_name="projects")
 
 
